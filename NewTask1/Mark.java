@@ -1,31 +1,31 @@
 package NewTask1;
 
 public class Mark {
-	private int mathMark;
-	private int arabicMark;
-	private int englishMark;
+	private double mathMark;
+	private double arabicMark;
+	private double englishMark;
 	
 ////Math Marks////
-	public void setMathMark(int mathMark) {
+	public void setMathMark(double mathMark) {
 		this.mathMark = mathMark;		
 	}
-	public int getmathMark() {
+	public double getmathMark() {
 		return mathMark;
 	}
 	
 ////Math Marks////
-	public void setArabicMark(int arabicMark) {
+	public void setArabicMark(double arabicMark) {
 		this.arabicMark = arabicMark;		
 	}
-	public int getArabicMark() {
+	public double getArabicMark() {
 		return arabicMark;
 	}
 	
 ////Math Marks////
-	public void setEnglishMark(int englishMark) {
+	public void setEnglishMark(double englishMark) {
 		this.englishMark = englishMark;		
 	}
-	public int getEnglishMark() {
+	public double getEnglishMark() {
 		return englishMark;
 	}
 	
