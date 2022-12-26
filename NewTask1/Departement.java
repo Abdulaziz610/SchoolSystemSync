@@ -12,8 +12,12 @@ public class Departement {
 	public Departement() {
 		System.out.println(" Defualt Details ");
 		this.departementName = " Seeb School ";
-		this.departementId = 10;
+		this.departementId = 22;
 	}
+	
+	
+	
+	
 /////Department Name/////
 	public void setDepartementName(String departementName) {
 		this.departementName = departementName;
