@@ -2,22 +2,28 @@ package NewTask1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class TaskTest {
 	public static void main(String[] args) {
 		School school = new School();
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Departement> departmentList = new ArrayList<Departement>();
+		Stack<String> stackView = new Stack<String>();
+		
 		System.out.println(" Welcome to Our School System ");
 		System.out.print("Enter School Name: ");
 		String name = sc.next();
 		school.setSchoolName(name);
+		stackView.push(name);
 		System.out.print("Enter School location: ");
 		String location = sc.next();
+		stackView.push(location);
 		school.setSchoolLocation(location);
 		System.out.print("Enter School ID: ");
-		int id = sc.nextInt();
+		Integer id = sc.nextInt();
 		school.setSchoolId(id);
+		stackView.push(id.toString());
 		
 
 		Boolean condtion1 = true;                ////Condition of the 1st while loop(Department)
@@ -29,18 +35,26 @@ public class TaskTest {
 			///////////////////////////Department//////////////////////////////////
 			Departement department1 = new Departement();
 			System.out.print("Enter Department Name: ");
-			department1.setDepartementName(sc.next());
+			String depName = sc.next();
+			department1.setDepartementName(depName);
+			stackView.push(depName);
 			System.out.print("Enter Department Size: ");
-			department1.setDepartementId(sc.nextInt());
+			Integer depSize = sc.nextInt();
+			department1.setDepartementId(depSize);
+			stackView.push(depSize.toString());
 			
 			///////////////////////////Teacher//////////////////////////////////
 			while(condtion2) {
 			Teacher teacherr = new Teacher();
 			/////////Teacher//////////
 			System.out.print("Enter Teacher Name: ");
-			teacherr.setTeacherName(sc.next());
+			String teachName = sc.next();
+			teacherr.setTeacherName(teachName);
+			stackView.push(teachName);
 			System.out.print("Enter Teacher id: ");
-			teacherr.setTeacherID(sc.nextInt());
+			Integer teacId = sc.nextInt();
+			teacherr.setTeacherID(teacId);
+			stackView.push(teacId.toString());
 			
 			
 			///////////////////////////Student//////////////////////////////////
@@ -55,9 +69,15 @@ public class TaskTest {
 			while(condtion4) {
 			Course course = new Course();
 			System.out.print("Enter Course Name: ");
-		    course.setCourseName(sc.next());
+			String courseName = sc.next();
+		    course.setCourseName(courseName);
+		    stackView.push(courseName);
 			System.out.print("Enter Course ID: ");
-			course.setCourseID(sc.nextInt());
+			Integer courseId = sc.nextInt();
+			course.setCourseID(courseId);
+			stackView.push(courseId.toString());
+			
+			
 			////****Mark****////
 			System.out.print("Enter Test1 Mark: ");
 			course.mark1.setMathMark(sc.nextDouble());
@@ -139,6 +159,15 @@ public class TaskTest {
 				System.out.println(" End of the program, Thank you!");
 			}
 		}
+		
+		System.out.println(" ************** School Details **************");
+		for(String s: stackView) {
+			System.out.println("====================================================");
+			System.out.println(s);
+			
+			
+		}
+		
 		sc.close();	
 	}	
 }
