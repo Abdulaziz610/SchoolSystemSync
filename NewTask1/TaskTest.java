@@ -10,6 +10,17 @@ public class TaskTest {
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Departement> departmentList = new ArrayList<Departement>();
 		Stack<String> stackView = new Stack<String>();
+		Boolean option = true;
+		
+		while(option) {
+			System.out.println(" *********Choose an option********* ");
+			System.out.println("1 - Object Chaining ");
+			System.out.println("2 - View History ");
+			System.out.println("3 - Exit ");
+			int option1 = sc.nextInt();
+			if(option1 == 1) {
+		
+		
 		
 		System.out.println(" Welcome to Our School System ");
 		System.out.print("Enter School Name: ");
@@ -123,8 +134,8 @@ public class TaskTest {
 			System.out.println("Do you want add another Department? Press (1) if yes, Press any number if No");
 			condtion2 = true;
 			condtion3 = true;
-			int option = sc.nextInt();
-			if (option != 1) {
+			int option2 = sc.nextInt();
+			if (option2 != 1) {
 				condtion1 = false;
 				System.out.println("************** School Details ************** ");
 				System.out.println("School location :" + school.getSchoolLocation());
@@ -159,16 +170,23 @@ public class TaskTest {
 				System.out.println(" End of the program, Thank you!");
 			}
 		}
-		
+		}
+		else if(option1 == 2) {
 		System.out.println(" ************** School Details **************");
 		for(String s: stackView) {
 			System.out.println("====================================================");
 			System.out.println(s);
+		}
+		}
+		else {
+			System.out.println(" End of the program, Thank you!");
+			option = false;
 			
-			
+		}
 		}
 		
 		sc.close();	
+		}
 	}	
-}
+
 
