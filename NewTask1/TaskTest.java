@@ -175,7 +175,7 @@ public class TaskTest {
 				}
 				System.out.println("====================================================");
 				}
-				System.out.println(" End of the program, Thank you!");
+				//System.out.println(" End of the program, Thank you!");
 			}
 		}
 		}
@@ -184,8 +184,9 @@ public class TaskTest {
 		File fileC = new File("C:\\Users\\Lenovo\\eclipse-workspace\\TestCodeline\\src\\NewTask1\\TestFile1.txt");
 		try {
 		      FileWriter myWriter = new FileWriter(fileC);
+		      myWriter.write(" *********** School Information *********** ");
 		for(String stack: stackView) {
-				myWriter.write("\n\n");
+				myWriter.write("\n");
 			      myWriter.write(stack);
 			      
 			    } 
@@ -198,7 +199,7 @@ public class TaskTest {
 		
 		}
 		else {
-			System.out.println(" End of the program, Thank you!");
+			//System.out.println(" End of the program, Thank you!");
 			option = false;
 			
 		}
