@@ -1,5 +1,8 @@
 package NewTask1;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
@@ -15,8 +18,9 @@ public class TaskTest {
 		while(option) {
 			System.out.println(" *********Choose an option********* ");
 			System.out.println("1 - Object Chaining ");
-			System.out.println("2 - View History ");
-			System.out.println("3 - Exit ");
+			System.out.println("2 - Write to file ");
+			System.out.println("3 - View the content of the file ");
+			System.out.println("4 - Exit ");
 			int option1 = sc.nextInt();
 			if(option1 == 1) {
 		
@@ -72,9 +76,13 @@ public class TaskTest {
 			while(condtion3) {
 			Student student = new Student();
 			System.out.print("Enter Student Name: ");
-			student.setStudentName(sc.next());
+			String StudentName = sc.next();
+			student.setStudentName(StudentName);
+			stackView.push(StudentName);
 			System.out.print("Enter Student ID: ");
-			student.setStudentID(sc.nextInt());
+			Integer stdId = sc.nextInt();
+			student.setStudentID(stdId);
+			stackView.push(stdId.toString());
 			
 			///////////////////////////Course//////////////////////////////////
 			while(condtion4) {
@@ -173,10 +181,21 @@ public class TaskTest {
 		}
 		else if(option1 == 2) {
 		System.out.println(" ************** School Details **************");
-		for(String s: stackView) {
-			System.out.println("====================================================");
-			System.out.println(s);
+		File fileC = new File("C:\\Users\\Lenovo\\eclipse-workspace\\TestCodeline\\src\\NewTask1\\TestFile1.txt");
+		try {
+		      FileWriter myWriter = new FileWriter(fileC);
+		for(String stack: stackView) {
+				myWriter.write("\n\n");
+			      myWriter.write(stack);
+			      
+			    } 
+				myWriter.close();
 		}
+			catch (IOException e) {
+			      System.out.println("An error occurred.");
+			      e.printStackTrace();
+			    }
+		
 		}
 		else {
 			System.out.println(" End of the program, Thank you!");
