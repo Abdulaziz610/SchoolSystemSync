@@ -8,13 +8,7 @@ public class Departement {
 	//Teacher teacher1 = new Teacher();
 	ArrayList<Teacher> teacherList = new ArrayList<Teacher>();
 	
-	
-	public Departement() {
-		System.out.println(" Defualt Details ");
-		this.departementName = " Seeb School ";
-		this.departementId = 22;
-	}
-	
+
 	
 	
 	
