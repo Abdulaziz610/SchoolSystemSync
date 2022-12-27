@@ -8,14 +8,7 @@ public class School {
 	private int schoolId;
 	
 	ArrayList<Departement> Dep = new ArrayList<Departement>();
-	public School() {
-		System.out.println(" Defualt Details ");
-		this.schoolName = " Seeb School ";
-		this.schoolLocation = " Seeb ";
-		this.schoolId = 10;
-		System.out.println("School Name " + schoolName + "School Location " + schoolLocation + "School Id " + schoolId);
-		System.out.println("--------------------------------------------------------------------------------------------------------");
-	}
+
 	/////School Name/////
 	public void setSchoolName(String schoolName) {
 		this.schoolName = schoolName;
