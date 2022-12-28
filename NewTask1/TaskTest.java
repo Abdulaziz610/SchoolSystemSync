@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class TaskTest {
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		School school = new School();
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Departement> departmentList = new ArrayList<Departement>();
@@ -21,7 +21,8 @@ public class TaskTest {
 			System.out.println("1 - Object Chaining ");
 			System.out.println("2 - Write to file ");
 			System.out.println("3 - View the content of the file ");
-			System.out.println("4 - Exit ");
+			System.out.println("4 - Search for a word and how many appears ");
+			System.out.println("5 - Exit ");
 			int option1 = sc.nextInt();
 			if(option1 == 1) {
 		
@@ -201,8 +202,8 @@ public class TaskTest {
 		}
 		else if(option1 == 3){
 			try {
-			      File fileO = new File("C:\\\\Users\\\\Lenovo\\\\eclipse-workspace\\\\TestCodeline\\\\src\\\\NewTask1\\\\TestFile1.txt");
-			      Scanner fileRead = new Scanner(fileO);
+			      File fileC = new File("C:\\\\Users\\\\Lenovo\\\\eclipse-workspace\\\\TestCodeline\\\\src\\\\NewTask1\\\\TestFile1.txt");
+			      Scanner fileRead = new Scanner(fileC);
 			      while (fileRead.hasNextLine()) {
 			        String dataInput = fileRead.nextLine();
 			        System.out.println(dataInput);
@@ -213,9 +214,47 @@ public class TaskTest {
 			      e.printStackTrace();
 			    }
 		}
-		else{
+			
+			
+		else if(option1 == 4) {
+	        
+	        System.out.print(" Enter Word that you want to search? ");
+	        String inputWord = sc.next();
+	        int wordCounter = 0;
+	        File fileC = new File("C:\\Users\\Lenovo\\eclipse-workspace\\TestCodeline\\src\\NewTask1\\TestFile1.txt");
+	        try {
+	        	
+	        	Scanner scSearch = new Scanner(fileC);
+	        	while(scSearch.hasNext()){
+	        		String[] wordCount = scSearch.nextLine().split(" ");
+	        		for(int i = 0; i < wordCount.length; i++) {
+	        			System.out.println(wordCount[i]);
+	        		if(inputWord.equalsIgnoreCase(wordCount[i])) {
+	        			wordCounter++;
+	        		}
+	        	}  
+		
+	        	} 
+	        	System.out.println(" The Word exists " + wordCounter + " Times ");
+	        	scSearch.close();
+	        }
+	        catch (FileNotFoundException e) {
+			      System.out.println("An error occurred.");
+			      e.printStackTrace();
+			    }
+	        	
+		
+		}
+		
+		
+			
+		else if(option1 == 5){
 			System.out.println(" End of the program, Thank you!");
 			option = false;
+		}
+		else {
+			System.out.println("Wrong option!!");
+			option = true;
 		}
 		}
 		
