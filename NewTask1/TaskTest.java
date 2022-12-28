@@ -1,6 +1,7 @@
 package NewTask1;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -198,10 +199,23 @@ public class TaskTest {
 			    }
 		
 		}
-		else {
-			//System.out.println(" End of the program, Thank you!");
+		else if(option1 == 3){
+			try {
+			      File fileO = new File("C:\\\\Users\\\\Lenovo\\\\eclipse-workspace\\\\TestCodeline\\\\src\\\\NewTask1\\\\TestFile1.txt");
+			      Scanner fileRead = new Scanner(fileO);
+			      while (fileRead.hasNextLine()) {
+			        String dataInput = fileRead.nextLine();
+			        System.out.println(dataInput);
+			      }
+			      fileRead.close();
+			    } catch (FileNotFoundException e) {
+			      System.out.println("An error occurred.");
+			      e.printStackTrace();
+			    }
+		}
+		else{
+			System.out.println(" End of the program, Thank you!");
 			option = false;
-			
 		}
 		}
 		
