@@ -177,10 +177,11 @@ public class TaskTest {
 				}
 				System.out.println("====================================================");
 				}
-				//System.out.println(" End of the program, Thank you!");
+				
 			}
 		}
 		}
+			//This else if here does the work of writing the user input to a external text file, Here the text file is "TestFile1.txt"
 		else if(option1 == 2) {
 		System.out.println(" ************** School Details **************");
 		File fileC = new File("C:\\Users\\Lenovo\\eclipse-workspace\\TestCodeline\\src\\NewTask1\\TestFile1.txt");
@@ -200,6 +201,8 @@ public class TaskTest {
 			    }
 		
 		}
+			
+			//This else if here does the work of Printing the user input to from the external file in the Console, Here the text file is "TestFile1.txt"
 		else if(option1 == 3){
 			try {
 			      File fileC = new File("C:\\\\Users\\\\Lenovo\\\\eclipse-workspace\\\\TestCodeline\\\\src\\\\NewTask1\\\\TestFile1.txt");
@@ -215,9 +218,8 @@ public class TaskTest {
 			    }
 		}
 			
-			
+			//This else if here does the work of Searching for a word from a text file, Here the text file is "TestFile1.txt"
 		else if(option1 == 4) {
-	        
 	        System.out.print(" Enter Word that you want to search? ");
 	        String inputWord = sc.next();
 	        int wordCounter = 0;
@@ -227,8 +229,8 @@ public class TaskTest {
 	        	Scanner scSearch = new Scanner(fileC);
 	        	while(scSearch.hasNext()){
 	        		String[] wordCount = scSearch.nextLine().split(" ");
+	        		//for-loop to count the number of times that the words appears
 	        		for(int i = 0; i < wordCount.length; i++) {
-	        			System.out.println(wordCount[i]);
 	        		if(inputWord.equalsIgnoreCase(wordCount[i])) {
 	        			wordCounter++;
 	        		}
@@ -247,7 +249,7 @@ public class TaskTest {
 		}
 		
 		
-			
+			//This else if is to Exit the program.
 		else if(option1 == 5){
 			System.out.println(" End of the program, Thank you!");
 			option = false;
