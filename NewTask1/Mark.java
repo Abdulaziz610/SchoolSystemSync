@@ -1,6 +1,6 @@
 package NewTask1;
 
-public class Mark {
+public class Mark implements studentMark {
 	private double mathMark;
 	private double arabicMark;
 	private double englishMark;
@@ -27,6 +27,16 @@ public class Mark {
 	}
 	public double getEnglishMark() {
 		return englishMark;
+	}
+	@Override
+	public void getStudentMark() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mathMark() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
